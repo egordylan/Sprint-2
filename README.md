@@ -22,7 +22,7 @@ In your WebdriverIO repo create simple test cases :
     - drag and drop - https://the-internet.herokuapp.com/drag_and_drop
     - mouse hover on element - https://the-internet.herokuapp.com/hovers
     - working with cookies (eg.: check cookies after successful/unsuccessful login, remove cookies after login then refresh the page and check if a user is logged out) - https://automationteststore.com/
-    - download file (also you can change the download folder in chrome capabilities, and then check file in the folder) - https://the-internet.herokuapp.com/download  
+    - download file (also you can change the download folder in chrome capabilities, and then check file in the folder) https://the-internet.herokuapp.com/download  
     - upload file - https://the-internet.herokuapp.com/upload
     - working with element state (check specific element state using is*ed() and waitFor* methods - https://the-internet.herokuapp.com/dynamic_loading/1
     - execute JS (e.g.: hide the animated banner, click on some elements, set search input value using JS) - https://automationteststore.com/
