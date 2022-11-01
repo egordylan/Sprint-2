@@ -18,10 +18,10 @@ async function login (login, password) {
     await passwordSelector.setValue(password);
     await button.click();
 
-    const userTitle = await $('.subtext');  
-    const name = await userTitle.getText();
-    expect (await browser.getTitle()).toBe('My Account'); 
-    await expect(name).toEqual('Johny');
+    // const userTitle = await $('.subtext');  
+    // const name = await userTitle.getText();
+    // expect (await browser.getTitle()).toBe('My Account'); 
+    // await expect(name).toEqual('Johny');
 }   
 
 

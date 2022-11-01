@@ -1,3 +1,9 @@
+const path = require('path');
+const fs = require('fs');
+const fsExtra = require('fs-extra');
+global.downloadDir = path.join(__dirname, 'tempDownload');
+
+
 exports.config = {
     //
     // ====================
@@ -57,6 +63,13 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+                     'goog:chromeOptions': {
+                        prefs: {
+                            'directory_upgrade': true,
+                            'prompt_for_download': false,
+                            'download.default_directory': downloadDir
+                        }
+                     },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -156,8 +169,13 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+        if (!fs.existsSync(downloadDir)) {
+            fs.mkdirSync(downloadDir);
+        } else {
+            fsExtra.emptyDirSync(downloadDir);
+        }
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
