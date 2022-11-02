@@ -11,9 +11,9 @@ describe('Drag and drop', async function () {
         it(`should successfully drag A to B`, async function () {
             const elem = await $('#column-a.column');
             const target = await $('#column-b.column');
-
-            await elem.dragAndDrop(target);
             // this test didn't work :(
+            await elem.dragAndDrop(target);
+            
             await expect(target).toHaveText('A');
             await expect(elem).toHaveText('B');
         });
