@@ -5,8 +5,8 @@ const fs = require('fs');
 
 describe('Download file', async function () {
     const link = 'https://the-internet.herokuapp.com/download';
-    const element = 'a[href="download/UplodFile1.txt"]';
-    const elemName = 'UplodFile1.txt';
+    const element = 'a[href="download/hello.txt"]';
+    const elemName = 'hello.txt';
     const pathToDir = 'tempDownload'; 
 
     before('open the page', async function () {
